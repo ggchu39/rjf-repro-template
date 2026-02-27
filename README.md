@@ -1,5 +1,5 @@
 # rjf-repro-template
-Portfolio-grade R pipeline demonstrating reproducible modelling workflows (NB/Gamma GLMs, diagnostics, CV/bootstrapping) using a Red Junglefowl learning task example with demo data.
+Portfolio-grade R pipeline demonstrating reproducible modelling and leakage-proof nested cross-validation bootstrap templates and workflows (NB/Gamma GLMs, diagnostics, CV/bootstrapping) using a Red Junglefowl learning task example with demo data.
 
 
 # Data
