@@ -1,19 +1,19 @@
 
 1. Outcomes & model families
 
-- Count outcomes (trial-to-criterion) modelled with Negative Binomial GLMs.
-- Skewed latency outcome modelled with Gamma GLM (log link).
-- Binary success outcome modelled with Logistic GLM.
+- Count Outcomes: Negative Binomial GLMs.
+- Skewed Latency: Gamma GLMs (log link).
+- Binary Success: Logistic GLMs.
 
-2. Candidate modelling strategy
+2. Candidate Modelling & Collinearity Control
+A Priori Specification: Candidate models defined as biologically plausible combinations (2–6 predictors), including additive and selected two-way interaction structures.
+Collinearity Screening: Rigorous assessment using Variance Inflation Factors (VIF) and Adjusted Generalized VIF (GVIF) for multi-parameter terms.
+Heuristic Thresholds: Strict monitoring of GVIF values (threshold ~2–3) alongside model stability and diagnostic performance to ensure robust parameter estimation.
 
-- Candidate models specified a priori as biologically plausible predictor combinations (main effects + selected two-way interactions where feasible).
-- Multicollinearity screening using (adjusted) GVIF; high-collinearity sets were restricted or simplified.
-
-3. Model ranking / selection
-
-- Candidate models can be compared using information-criteria (e.g., AICc/MuMIn) where appropriate. 
-- Models retained for follow-up when ΔAICc ≤ 4 (information-theoretic shortlist).
+3. Information-Theoretic Model Ranking
+Selection Framework: Models ranked using AICc (Akaike Information Criterion corrected for small samples).
+Shortlisting: Retention of an information-theoretic shortlist (ΔAICc ≤ 4) for further evaluation.
+Prioritisation: Final inference prioritises parsimony, biological plausibility, and diagnostic integrity.
 
 4. Diagnostics & fit checks
 
