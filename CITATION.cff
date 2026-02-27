@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use or adapt this repository, please cite it."
+type: software
+title: "rjf-repro-template"
+authors:
+  - family-names: "Chu"
+    given-names: "Georgina Waner"
+repository-code: "https://github.com/ggchu39/rjf-repro-template"
+url: "https://github.com/ggchu39/rjf-repro-template"
+license: "MIT"
+year: 2026
