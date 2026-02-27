@@ -1,0 +1,47 @@
+---
+title: "Example: Logistic nested bootstrap CV (template)"
+format: html
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Load generic functions
+source("R/20_cv_logit.R")
+
+set.seed(1)
+
+n <- 60
+df <- data.frame(
+  x1 = rnorm(n),
+  x2 = rnorm(n)
+)
+
+# Generate a binary outcome from a logistic model (toy)
+linpred <- -0.2 + 0.9 * df$x1 - 0.5 * df$x2
+p <- 1 / (1 + exp(-linpred))
+df$y <- rbinom(n, size = 1, prob = p)
+
+model_formulas <- list(
+  "Model 1" = y ~ x1,
+  "Model 2" = y ~ x2,
+  "Model 3" = y ~ x1 + x2
+)
+
+res <- nested_bootstrap_CV_logit(
+  data = df,
+  model_formulas = model_formulas,
+  region_label = "toy_logit",
+  outcome_var = "y",
+  B = 50,     # small for demo; increase in real use
+  seed = 123
+)
+
+res$ci
+res$SelectionFreq
+
+
+
+
+
