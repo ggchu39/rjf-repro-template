@@ -1,5 +1,5 @@
 # rjf-repro-template
-Portfolio-grade R pipeline demonstrating reproducible modelling and leakage-proof nested cross-validation bootstrap templates (NB/Gamma/Logit GLMs), and reporting workflows—illustrated with toy/demo data.
+Portfolio-grade R pipeline demonstrating reproducible modelling and leakage-proof nested cross-validation bootstrap templates (NB/Gamma/Logit GLMs), and reporting workflows—illustrated with toy/demo data. It does not include the full manuscript analysis code or data.
 
 # Data
 
