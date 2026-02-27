@@ -1,0 +1,55 @@
+---
+title: "Example: Gamma nested bootstrap CV (template)"
+format: html
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Purpose
+
+This is a minimal runnable example showing how to call the core function
+`nested_bootstrap_cv_gamma()` on toy data (no real project data).
+
+```{r}
+source("R/10_cv_gamma.R")
+
+
+set.seed(1)
+df <- data.frame(
+  y  = rexp(40, rate = 1/200) + 1,  # positive, right-skewed outcome
+  x1 = rnorm(40),
+  x2 = rnorm(40)
+)
+
+model_formulas <- list(
+  "Model 1" = y ~ x1,
+  "Model 2" = y ~ x2,
+  "Model 3" = y ~ x1 + x2
+)
+
+res <- nested_bootstrap_cv_gamma(
+  data = df,
+  model_formulas = model_formulas,
+  outcome_var = "y",
+  B = 50,         # small for demo; increase in real use
+  seed = 123,
+  scale_predictors = TRUE,
+  guardrail = "na",
+  min_y = 1, max_y = 900,
+  high_error_threshold = 300
+)
+
+res$robust_summary
+res$prop_high_mae
+res$model_frequencies
+
+
+
+
+
+
+
+
+
