@@ -1,7 +1,12 @@
-# rjf-repro-template
-This repository contains a portfolio-grade R pipeline designed for reproducible statistical modeling and leakage-proof validation. It specifically addresses challenges common in longitudinal and clinical datasets, such as non-Gaussian distributions and information leakage during model selection.
+**A Robust Framework for Multi-Model Inference and Leakage-Proof Nested Validation (Behavioural Neuroscience)**
+This repository provides portfolio-grade R templates for reproducible modelling and leakage-proof nested bootstrap cross-validation, tailored to common behavioural neuroscience outcomes:
+- Counts → Negative Binomial GLMs
+- Skewed latencies → Gamma GLMs (log link)
+- Binary success → Logistic GLMs
 
-**Note** This is a methodological template illustrated with simulated data. It does not include raw project data or manuscript-specific results, ensuring compliance with data privacy and publication embargoes.
+It includes reporting workflows (source-of-truth saved objects → derived tables) and paired resampling utilities for fair head-to-head model comparisons.
+
+**Note:** This is a methodological template illustrated with simulated/toy data. It intentionally excludes raw project data, manuscript-specific model specifications, and results to respect privacy and publication embargoes while documenting reusable methodology and authorship.
 
 To use the template, provide your own dataframe with:
 - a positive outcome variable (e.g., latency-like measure)
