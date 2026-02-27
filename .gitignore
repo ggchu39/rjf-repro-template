@@ -40,10 +40,19 @@ vignettes/*.pdf
 .Renviron
 
 # pkgdown site
-docs/
+
 
 # translation temp files
 po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Analysis outputs (do not commit)
+outputs/
+*.rds
+*.csv
+*.pdf
+*.png
+*.html
+
