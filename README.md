@@ -1,3 +1,4 @@
+<img width="1020" height="909" alt="image" src="https://github.com/user-attachments/assets/8c65f604-d2ad-4522-9d91-3876be3f987e" />
 **A Robust Framework for Multi-Model Inference and Leakage-Proof Nested Validation (Behavioural Neuroscience)**
 This repository provides portfolio-grade R templates for reproducible modelling and leakage-proof nested bootstrap cross-validation, tailored to common behavioural neuroscience outcomes:
 - Counts → Negative Binomial GLMs
