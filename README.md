@@ -1,9 +1,7 @@
 # rjf-repro-template
-Portfolio-grade R pipeline demonstrating reproducible modelling and leakage-proof nested cross-validation bootstrap templates (NB/Gamma/Logit GLMs), and reporting workflows—illustrated with toy/demo data. It does not include the full manuscript analysis code or data.
+This repository contains a portfolio-grade R pipeline designed for reproducible statistical modeling and leakage-proof validation. It specifically addresses challenges common in longitudinal and clinical datasets, such as non-Gaussian distributions and information leakage during model selection.
 
-# Data
-
-This public repository does not include any real project data.
+**Note** This is a methodological template illustrated with simulated data. It does not include raw project data or manuscript-specific results, ensuring compliance with data privacy and publication embargoes.
 
 To use the template, provide your own dataframe with:
 - a positive outcome variable (e.g., latency-like measure)
