@@ -1,0 +1,75 @@
+---
+title: "Example: Negative Binomial paired nested bootstrap CV (template)"
+format: html
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Load generic functions
+source("R/cvb_nb_paired.R")
+
+set.seed(1)
+
+# Toy count data (NB-like)
+n <- 60
+df <- data.frame(
+  x1 = rnorm(n),
+  x2 = rnorm(n)
+)
+
+# Create a mean structure and generate NB counts
+mu <- exp(0.2 + 0.6*df$x1 - 0.4*df$x2)
+theta <- 2
+df$y <- rnbinom(n, mu = mu, size = theta)
+
+# Candidate models
+model_formulas <- list(
+  "Model 1" = y ~ x1,
+  "Model 2" = y ~ x2,
+  "Model 3" = y ~ x1 + x2,
+  "Model 4" = y ~ 1
+)
+
+# Run (small B for demo; increase in real use)
+res <- cvb_nb_single_nestedLOO_paired(
+  data = df,
+  model_formulas = model_formulas,
+  region_label = "toy_nb",
+  outcome_var = "y",
+  B = 50,
+  seed = 123,
+  out_dir = "analysis/_demo_outputs"
+)
+
+res$rds_path
+res$summary_raw
+
+# Build reporting outputs from the saved RDS (source of truth)
+make_table_312(
+  rds_path = res$rds_path,
+  region_label = "toy_nb",
+  out_csv = "Table_3_1_2_toy_nb.csv",
+  out_dir = "analysis/_demo_outputs"
+)
+
+make_table_313(
+  rds_path = res$rds_path,
+  region_label = "toy_nb",
+  out_csv = "Table_3_1_3_toy_nb.csv",
+  out_dir = "analysis/_demo_outputs"
+)
+
+# Preview
+read.csv("analysis/_demo_outputs/Table_3_1_2_toy_nb.csv")
+head(read.csv("analysis/_demo_outputs/Table_3_1_3_toy_nb.csv"))
+
+
+
+
+
+
+
+
+
