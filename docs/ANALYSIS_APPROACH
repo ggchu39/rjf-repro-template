@@ -2,54 +2,43 @@
 1. Outcomes & model families
 
 - Count outcomes (trial-to-criterion) modelled with Negative Binomial GLMs.
-
 - Skewed latency outcome modelled with Gamma GLM (log link).
-
 - Binary success outcome modelled with Logistic GLM.
 
 2. Candidate modelling strategy
 
 - Candidate models specified a priori as biologically plausible predictor combinations (main effects + selected two-way interactions where feasible).
-
 - Multicollinearity screening using (adjusted) GVIF; high-collinearity sets were restricted or simplified.
 
 3. Model ranking / selection
 
-- AICc-based ranking (MuMIn) used to compare candidates.
-
+- Candidate models can be compared using information-criteria (e.g., AICc/MuMIn) where appropriate. 
 - Models retained for follow-up when ΔAICc ≤ 4 (information-theoretic shortlist).
 
 4. Diagnostics & fit checks
 
 - DHARMa simulated-residual diagnostics for count/Gamma models (dispersion, zero inflation, residual patterns).
-
 - Logistic models assessed with discrimination (AUC) and calibration (Hosmer–Lemeshow + graphical calibration).
+- Standard diagnostic also applied.
 
 5. Leakage-proof validation (core quality signal)
 
 - Nested resampling to separate model choice from performance estimation (avoid information leakage).
-
 - Two-stage validation:
-
   (i)  Multi-model nested resampling for model selection + out-of-fold performance.
-
   (ii) Single-model resampling for uncertainty / confidence intervals of performance metrics.
 
 6. Paired resampling for fair comparisons
-
-- When comparing multiple fixed models, the workflow uses paired bootstrap resamples across models so head-to-head differences are computed on the same resamples.
+When comparing multiple fixed models, the workflow uses paired bootstrap resamples across models so head-to-head differences are computed on the same resamples.
 
 7. Robust reporting
 
 - “Catastrophic” or non-finite resampling errors are trimmed for reporting only, while preserving the source-of-truth saved object.
-
 - All reporting tables are derived from the saved outputs (no refitting during reporting).
 
 8. Sensitivity analysis
-
 Turnover robustness tested by swapping DOPAC/DA ↔ HVA/DA in otherwise identical model backbones and re-running the same validation pipeline.
 
 9. Reproducibility
-
 Deterministic seeds, consistent naming, and a “source-of-truth RDS → derived tables” structure for traceability.
 
