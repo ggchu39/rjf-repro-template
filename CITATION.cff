@@ -5,9 +5,10 @@ title: "rjf-repro-template"
 authors:
   - family-names: "Chu"
     given-names: "Georgina Waner"
+    orcid: "https://orcid.org/0009-0007-3645-795X"
 repository-code: "https://github.com/ggchu39/rjf-repro-template"
 url: "https://github.com/ggchu39/rjf-repro-template"
-license: "MIT"
-year: 2026
-
-CITE: Chu, G. W. (2026). rjf-repro-template (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.18805870
+license: MIT
+doi: 10.5281/zenodo.18805870
+version: "v1.0.0"
+date-released: "2026-02-27"
